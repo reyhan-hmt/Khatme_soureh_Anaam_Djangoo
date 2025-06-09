@@ -1,0 +1,307 @@
+/* فونت‌ها */
+@font-face {
+  font-family: 'BNazanin';
+  src: url('./fonts/BNazanin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lateef';
+  src: url('./fonts/Lateef-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ریشه متغیرها */
+:root {
+  --ramadan-green: #2ecc71;
+  --ramadan-light: #e8f5e9;
+  --ramadan-dark: #1e7e34;
+  --ramadan-gray: #607d8b;
+  --ramadan-white: #f8fff8;
+}
+
+/* ----------------- بدنه کلی صفحه ----------------- */
+body {
+  font-family: 'BNazanin', Tahoma, sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 20px;
+  margin-top: 15px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(238, 235, 235, 0.955);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ----------------- جعبه اصلی ----------------- */
+.container {
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 24px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(46, 204, 113, 0.2);
+  backdrop-filter: blur(5px);
+  box-shadow: 
+    0 10px 30px rgba(46, 204, 113, 0.1),
+    0 5px 15px rgba(255, 255, 255, 0.5) inset;
+}
+
+/* ----------------- عنوان ----------------- */
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #2c3e50;
+  margin: -20px 0 10px;
+}
+
+/* ----------------- شمارنده ختم ----------------- */
+.counter {
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 25px 0;
+}
+
+.counter strong {
+  display: inline-block;
+  padding: 0 5px;
+  font-size: 24px;
+  color: #2c3e50;
+}
+
+/* ----------------- جعبه آیه ----------------- */
+.ayah-box {
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  background: rgba(248, 255, 248, 0.7);
+  border: 1px solid rgba(46, 204, 113, 0.15);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.ayah-text {
+  font-family: 'Lateef', 'BNazanin', Tahoma, sans-serif;
+  font-size: 36px;
+  line-height: 2.2;
+  text-align: center;
+  color: #1b1b1b;
+}
+
+.translation {
+  font-size: 22px;
+  text-align: center;
+  color: #555;
+  margin: 30px 0;
+  padding-top: 20px;
+  line-height: 1.8;
+  border-top: 1px dashed #ccc;
+}
+
+.ayah-number {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #388e3c;
+  background: #e8f5e9;
+  border-right: 4px solid #66bb6a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* ----------------- دکمه ----------------- */
+.btn-participate {
+  display: block;
+  margin: 0 auto;
+  padding: 14px 35px;
+  font-size: 20px;
+  font-family: 'BNazanin', Tahoma, sans-serif;
+  color: white;
+  text-align: center;
+  background: linear-gradient(135deg, #43a047, #66bb6a);
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.25);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.btn-participate:hover {
+  background: linear-gradient(135deg, #388e3c, #43a047);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.35);
+}
+
+/* ----------------- هدیه ثواب ----------------- */
+.prayer-note {
+  margin-top: 30px;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 24px;
+  color: #555;
+  background: linear-gradient(to right, rgba(232, 245, 233, 0.7), rgba(255, 255, 255, 0.9));
+  border-right: 3px solid var(--ramadan-green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.prayer-note i {
+  font-size: 28px;
+  margin: 0 5px;
+  color: var(--ramadan-dark);
+}
+
+.prayer-note .highlight {
+  font-weight: bold;
+  color: var(--ramadan-dark);
+  display: inline-block;
+  position: relative;
+}
+
+.prayer-note .parenthesis {
+  font-size: 0.9em;
+  margin-right: 3px;
+  color: var(--ramadan-dark);
+}
+
+/* ----------------- ساختار آیه ----------------- */
+.ayah-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+}
+
+.counter-box {
+  text-align: right;
+}
+
+/* ----------------- ریسپانسیو ----------------- */
+@media (max-width: 768px) {
+  body {
+    display: block;
+    padding: 10px;
+    min-height: auto;
+    
+  }
+
+  .container {
+    padding: 25px 15px;
+    border-radius: 16px;
+    backdrop-filter: blur(3px);
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: 34px;
+    margin: 0 0 20px;
+    padding-top: 10px;
+    margin-top: 10px !important;
+    
+  }
+
+  .counter {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .ayah-box {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .ayah-text {
+    font-size: 36px;
+    line-height: 1.8;
+  }
+
+  .translation {
+    font-size: 18px;
+    margin: 20px 0 25px;
+    padding-top: 15px;
+  }
+
+  .btn-participate {
+    width: 90%;
+    max-width: 300px;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 25px;
+    margin: 10px auto 15px;
+  }
+
+  .ayah-number {
+    font-size: 16px;
+    padding: 6px 15px;
+    white-space: nowrap;
+  }
+
+  .prayer-note {
+    font-size: 16px;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+
+  .heart-icon {
+    font-size: 16px;
+  }
+
+  .ayah-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-side {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .counter-box {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ayah-text {
+    font-size: 28px;
+  }
+
+  .translation {
+    font-size: 16px;
+  }
+
+  .counter {
+    font-size: 20px;
+  }
+
+  .counter strong {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ختم سوره انعام</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="ayah-box">
+            <h1>ختم سوره انعام</h1>
+
+            <div class="ayah-header">
+                <div class="right-side">
+                    <span class="ayah-number">آیه {{ ayah.number }}</span>
+                </div>
+            </div>
+
+            <div class="counter-box">
+                <p class="counter">تعداد ختم‌های کامل شده: <strong>{{ completed_count }}</strong></p>
+            </div>
+
+            <div class="ayah-text">{{ ayah.text }}</div>
+            <div class="translation">{{ ayah.translation }}</div>
+        </div>
+
+        <form method="post" action="{% url 'next_ayah' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn-participate">
+                مشارکت مجدد
+            </button>
+        </form>
+
+        <div class="prayer-note">
+            <i class="fas fa-heart"></i>
+            <span>ثواب ختم هدیه به روح</span>
+            <span class="highlight">امام<span class="parenthesis">(ره)</span></span>،
+            <span>شهدا، علما و اموات مومنین</span>
+            <i class="fas fa-heart heart-icon right"></i>
+        </div>
+    </div>
+</body>
+</html>
